@@ -13,7 +13,7 @@
             <tr>
                 <th>No.</th>
                 <th>Pesan</th>
-                <th>Isi</th>
+                <th>Isi Pesan</th>
             </tr>
         </thead>
         <tbody>
