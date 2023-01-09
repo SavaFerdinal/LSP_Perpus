@@ -22,7 +22,11 @@
                         <div><b>Pengarang:</b> {{ $b->pengarang }}</div>
                     </div>
                     <div class="card-footer">
-                        <a href="" class="btn btn-primary">Pinjam</a>
+                        <form action="{{ route('user.form_peminjaman') }}" method="POST">
+                        @csrf
+                        <input type="hidden" value="{{ $b->id }}" name="buku_id">
+                        <button class="btn btn-primary" type="submit">Pinjam</button>
+                    </form>
                     </div>
                 </div>
             </div>

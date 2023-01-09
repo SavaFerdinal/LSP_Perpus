@@ -6,6 +6,7 @@ use App\Models\Pemberitahuan;
 use App\Models\Peminjaman;
 use App\Models\Pesan;
 use App\Models\User;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -38,8 +39,36 @@ Route::prefix('user')->group(function() {
 
     
     Route::get('/form_peminjaman', function(){
-        return view('user.form_peminjaman');
+        $buku = Buku::all();
+        return view('user.form_peminjaman', compact('buku'));
     })->name('user.form_peminjaman');
+
+    Route::post('/form_peminjaman', function(Request $request){
+        $buku_id = $request->buku_id;
+        $buku = Buku::all();
+        return view('user.form_peminjaman', compact('buku', 'buku_id'));
+    });
+
+    Route::post('submit_peminjaman', function(Request $request){
+        $tanggal_peminjaman = $request->tanggal_peminjaman;
+        $buku_id = $request->buku_id;
+        $kondisi_buku_saat_dipinjam = $request->kondisi_buku_saat_dipinjam;
+        $user_id = $request->user_id;
+
+        $peminjaman = Peminjaman::create([
+            "tanggal_peminjaman" => $tanggal_peminjaman,
+            "buku_id" => $buku_id,
+            "kondisi_buku_saat_dipinjam" => $kondisi_buku_saat_dipinjam,
+            "user_id"=> $user_id
+        ]);
+
+        if($peminjaman){
+            return redirect()->route("user.peminjaman");
+        }
+
+        return redirect()->back();
+    })->name('user.submit_peminjaman');
+
 
     Route::get('/peminjaman', function(){
         $peminjaman = Peminjaman::where('user_id', Auth::user()->id)->get();
