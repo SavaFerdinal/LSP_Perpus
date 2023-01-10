@@ -92,7 +92,7 @@ class FirstSeeder extends Seeder
         ]);
 
         Buku::create([
-            "judul" => "Cara Memasak Nasi",
+            "judul" => "Black Clover",
             "kategori_id" => "1",
             "penerbit_id" => "1",
             "pengarang" => "Ezhar",
@@ -100,11 +100,11 @@ class FirstSeeder extends Seeder
             "isbn" => "23423442342",
             "j_buku_baik" => "25",
             "j_buku_rusak" => "5",
-            "foto" => "",
+            "foto" => "BlackClover.jpg",
         ]);
 
         Buku::create([
-            "judul" => "Ensiklopedia Luar angkasa",
+            "judul" => "Naruto",
             "kategori_id" => "2",
             "penerbit_id" => "2",
             "pengarang" => "ali",
@@ -116,7 +116,7 @@ class FirstSeeder extends Seeder
         ]);
 
         Buku::create([
-            "judul" => "Cara Memasak Nasi",
+            "judul" => "Dragon Ball",
             "kategori_id" => "3",
             "penerbit_id" => "3",
             "pengarang" => "Chairul",
