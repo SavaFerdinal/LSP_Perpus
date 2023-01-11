@@ -130,8 +130,8 @@ class FirstSeeder extends Seeder
         Peminjaman::create ([
             "user_id" => "1",
             "buku_id" => "2",
-            "tanggal_peminjaman" => "2023-05-05 23:09:03",
-            "tanggal_pengembalian" => "2023-05-05 23:09:03",
+            "tanggal_peminjaman" => "2023-05-05",
+            "tanggal_pengembalian" => "2023-05-05",
             "kondisi_buku_saat_dipinjam" => "baik",
             "kondisi_buku_saat_dikembalikan" => "baik",
         ]);
@@ -139,8 +139,8 @@ class FirstSeeder extends Seeder
         Peminjaman::create ([
             "user_id" => "3",
             "buku_id" => "2",
-            "tanggal_peminjaman" => "2023-05-01 23:09:03",
-            "tanggal_pengembalian" => "2023-05-05 23:09:03",
+            "tanggal_peminjaman" => "2023-05-01",
+            "tanggal_pengembalian" => "2023-05-05",
             "kondisi_buku_saat_dipinjam" => "baik",
             "kondisi_buku_saat_dikembalikan" => "rusak",
             "denda" => "100000",
@@ -149,8 +149,8 @@ class FirstSeeder extends Seeder
         Peminjaman::create ([
             "user_id" => "3",
             "buku_id" => "3",
-            "tanggal_peminjaman" => "2023-05-05 23:09:03",
-            "tanggal_pengembalian" => "2023-05-01 23:09:03",
+            "tanggal_peminjaman" => "2023-05-05",
+            "tanggal_pengembalian" => "2023-05-01",
             "kondisi_buku_saat_dipinjam" => "baik",
             "kondisi_buku_saat_dikembalikan" => "baik",
         ]);

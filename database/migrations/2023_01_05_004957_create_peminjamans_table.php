@@ -17,8 +17,8 @@ class CreatePeminjamansTable extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained();
             $table->foreignId('buku_id')->constrained();
-            $table->dateTime('tanggal_peminjaman');
-            $table->dateTime('tanggal_pengembalian')->nullable();
+            $table->date('tanggal_peminjaman');
+            $table->date('tanggal_pengembalian')->nullable();
             $table->enum('kondisi_buku_saat_dipinjam', ['baik', 'rusak']);
             $table->enum('kondisi_buku_saat_dikembalikan', ['baik', 'rusak'])->nullable();
             $table->float('denda')->nullable();
