@@ -33,8 +33,13 @@ class ApiPeminjamanController extends Controller
     public function store(Request $request)
     {
         $peminjaman = Peminjaman::create([
-            'kode' => $request->kode,
-            'nama' => $request->nama,
+            'user_id' => $request->User_id,
+            'buku_id' => $request->buku_id,
+            'tanggal_peminjaman' => $request->tanggal_peminjaman,
+            'tanggal_pengembalian' => $request->tanggal_pengembalian,
+            'kondisi_buku_saat_dipinjam' => $request->kondisi_buku_saat_dipinjam,
+            'kondisi_buku_saat_dikembalikan' => $request->kondisi_buku_saat_dikembalikan,
+            'denda' => $request->denda,
         ]);
         return response()->json(['msg' => 'Data created', 'data' => $peminjaman], 201);
     }

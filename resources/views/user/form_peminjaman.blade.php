@@ -13,7 +13,7 @@
                     @csrf
                     <div class="mb-3">
                         <label for="">Tanggal Peminjaman</label>
-                        <input type="date" class="form-control" name="tanggal_peminjaman">
+                        <input type="text" selected class="form-control" name="tanggal_peminjaman" value="{{ date('Y-m-d') }}">
                     </div>
                     <div class="mb-3">
                         <label for="">Pilih Buku</label>
@@ -35,7 +35,7 @@
                         </select>
                     </div>
                     <input type="hidden" value="{{ Auth::user()->id }}" name="user_id">
-                    <button type="submit" class="btn btn-primary">SUBMIT</button>
+                    <button type="submit" class="btn btn-primary">Pinjam</button>
                 </form>
             </div>
         </div>

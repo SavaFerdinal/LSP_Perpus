@@ -35,6 +35,7 @@ class ApiPenerbitController extends Controller
         $penerbit = Penerbit::create([
             'kode' => $request->kode,
             'nama' => $request->nama,
+            'verif' => $request->verif,
         ]);
         return response()->json(['msg' => 'Data created', 'data' => $penerbit], 201);
     }

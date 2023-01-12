@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use DateTime;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ApiUserController extends Controller
 {
@@ -111,5 +112,18 @@ class ApiUserController extends Controller
         $user = User::findOrFail($id);
         $user->delete();
         return response()->json(['msg' => 'Data deleted'], 200);
+    }
+
+    // AUTHENTICATION
+    public function login(Request $request)
+    {
+        if (!Auth::attempt($request->only('username', 'password')))
+        {
+            return response()->json(['msg' => 'unauthorized'], 401);
+        }
+
+        $user = User::where('username', $request['username'])->firstOrFail();
+        $token = $user->createToken('auth_token')->plainTextToken;
+        return response()->json(['msg' => 'Hi ' . $user->fullname . ',welcome to Perpus', 'access_token' => $token, 'token_type' => 'Bearer']);
     }
 }

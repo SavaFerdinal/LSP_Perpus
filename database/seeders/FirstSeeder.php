@@ -64,8 +64,8 @@ class FirstSeeder extends Seeder
         ]);
 
         Kategori::create ([
-            "kode" => "sains",
-            "nama" => "Sains",
+            "kode" => "komik",
+            "nama" => "Komik",
         ]);
 
         Kategori::create ([
@@ -80,22 +80,22 @@ class FirstSeeder extends Seeder
         ]);
 
         Penerbit::create([
-            "kode" => "bse",
-            "nama" => "BSE",
+            "kode" => "mediafactory",
+            "nama" => "Media Factory",
             "verif" => "",
         ]);
 
         Penerbit::create([
-            "kode" => "intermedia",
-            "nama" => "Intermedia",
+            "kode" => "shueisha",
+            "nama" => "Shueisha",
             "verif" => "",
         ]);
 
         Buku::create([
             "judul" => "Black Clover",
-            "kategori_id" => "1",
-            "penerbit_id" => "1",
-            "pengarang" => "Ezhar",
+            "kategori_id" => "2",
+            "penerbit_id" => "3",
+            "pengarang" => "Yuki Tabata",
             "tahun_terbit" => "2010",
             "isbn" => "23423442342",
             "j_buku_baik" => "25",
@@ -106,25 +106,25 @@ class FirstSeeder extends Seeder
         Buku::create([
             "judul" => "Naruto",
             "kategori_id" => "2",
-            "penerbit_id" => "2",
-            "pengarang" => "ali",
+            "penerbit_id" => "3",
+            "pengarang" => "Masashi Kisimoto",
             "tahun_terbit" => "2015",
             "isbn" => "23423442343",
             "j_buku_baik" => "30",
             "j_buku_rusak" => "10",
-            "foto" => "",
+            "foto" => "Naruto.jpg",
         ]);
 
         Buku::create([
-            "judul" => "Dragon Ball",
-            "kategori_id" => "3",
-            "penerbit_id" => "3",
-            "pengarang" => "Chairul",
+            "judul" => "Mushoku Tensei",
+            "kategori_id" => "2",
+            "penerbit_id" => "2",
+            "pengarang" => "Rifujin",
             "tahun_terbit" => "2010",
             "isbn" => "23423442344",
             "j_buku_baik" => "15",
             "j_buku_rusak" => "5",
-            "foto" => "",
+            "foto" => "Mushoku.jpg",
         ]);
 
         Peminjaman::create ([
@@ -148,7 +148,7 @@ class FirstSeeder extends Seeder
 
         Peminjaman::create ([
             "user_id" => "3",
-            "buku_id" => "3",
+            "buku_id" => "1",
             "tanggal_peminjaman" => "2023-05-05",
             "tanggal_pengembalian" => "2023-05-01",
             "kondisi_buku_saat_dipinjam" => "baik",
