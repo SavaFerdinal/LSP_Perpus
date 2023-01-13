@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Pemberitahuan extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'isi',
+        'level_user',
+        'status'
+    ];
 }
