@@ -35,7 +35,7 @@ class ApiUserController extends Controller
     public function store_admin(Request $request)
     {
         $now = new DateTime();
-        $formated = $now->format('Y-m-d H:i:s');
+        $formated = $now->format('Y-m-d');
 
         $user = User::create([
             'kode' => $request->kode,
@@ -57,7 +57,7 @@ class ApiUserController extends Controller
     public function store_user(Request $request)
     {
         $now = new DateTime();
-        $formated = $now->format('Y-m-d H:i:s');
+        $formated = $now->format('Y-m-d');
 
         $user = User::create([
             'kode' => $request->kode,

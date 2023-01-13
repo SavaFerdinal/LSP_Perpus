@@ -19,8 +19,8 @@ class ApiKategoriController extends Controller
             $kategori = Kategori::findOrFail($id);
             return response()->json(['msg' => 'Data retrieved', 'data' => $kategori], 200);
         } else {
-            $kategoris = Kategori::get();
-            return response()->json(['msg' => 'Data retrieved', 'data' => $kategoris], 200);
+            $kategori = Kategori::get();
+            return response()->json(['msg' => 'Data retrieved', 'data' => $kategori], 200);
         }
     }
 

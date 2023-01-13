@@ -19,8 +19,8 @@ class ApiPenerbitController extends Controller
             $penerbit = Penerbit::findOrFail($id);
             return response()->json(['msg' => 'Data retrieved', 'data' => $penerbit], 200);
         } else {
-            $penerbits = Penerbit::get();
-            return response()->json(['msg' => 'Data retrieved', 'data' => $penerbits], 200);
+            $penerbit = Penerbit::get();
+            return response()->json(['msg' => 'Data retrieved', 'data' => $penerbit], 200);
         }
     }
 

@@ -9,6 +9,15 @@ class Pesan extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'penerima_id',
+        'pengirim_id',
+        'judul',
+        'isi',
+        'status',
+        'tanggal_kirim'
+    ];
+
     public function penerima() {
         return $this->belongsTo(User::class);
     }

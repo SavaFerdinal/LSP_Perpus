@@ -19,8 +19,8 @@ class ApiPeminjamanController extends Controller
             $peminjaman = Peminjaman::findOrFail($id);
             return response()->json(['msg' => 'Data retrieved', 'data' => $peminjaman], 200);
         } else {
-            $peminjamans = Peminjaman::get();
-            return response()->json(['msg' => 'Data retrieved', 'data' => $peminjamans], 200);
+            $peminjaman = Peminjaman::get();
+            return response()->json(['msg' => 'Data retrieved', 'data' => $peminjaman], 200);
         }
     }
 
