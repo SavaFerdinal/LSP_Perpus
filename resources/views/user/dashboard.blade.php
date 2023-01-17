@@ -1,10 +1,9 @@
-@extends('layouts.app')
+@extends('layouts.master')
 @section('content')
 <div class="container">
-    @include('components.user.sidebar')
 
     @foreach ($pemberitahuan as $p)
-        <div class="alert alert-info">
+        <div class="alert alert-primary">
             {{ $p->isi }}
         </div>
     @endforeach

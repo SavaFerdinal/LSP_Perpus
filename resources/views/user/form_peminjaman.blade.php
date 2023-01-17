@@ -1,8 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.master')
 @section('content')
 <div class="container">
-    <div class="container">
-        @include('components.user.sidebar')
 
         <div class="card">
             <div class="card-header">
@@ -13,7 +11,7 @@
                     @csrf
                     <div class="mb-3">
                         <label for="">Tanggal Peminjaman</label>
-                        <input type="text" selected class="form-control" name="tanggal_peminjaman" value="{{ date('Y-m-d') }}">
+                        <input type="text" readonly class="form-control" name="tanggal_peminjaman" value="{{ date('Y-m-d') }}">
                     </div>
                     <div class="mb-3">
                         <label for="">Pilih Buku</label>
@@ -40,6 +38,5 @@
             </div>
         </div>
 
-    </div>
 </div>
 @endsection

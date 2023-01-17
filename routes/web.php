@@ -38,7 +38,7 @@ Route::prefix('user')->group(function() {
         return view('user.dashboard', compact('pemberitahuan', 'buku'));
     })->name('user.dashboard');
 
-    
+    //peminjaman
     Route::get('/form_peminjaman', function(){
         $buku = Buku::all();
         return view('user.form_peminjaman', compact('buku'));
@@ -59,6 +59,28 @@ Route::prefix('user')->group(function() {
 
         return redirect()->back();
     })->name('user.submit_peminjaman');
+
+    //pengembalian
+    Route::get('/form_pengembalian', function(){
+        $buku = Buku::all();
+        return view('user.form_pengembalian', compact('buku'));
+    })->name('user.form_pengembalian');
+
+    Route::post('/form_pengembalian', function(Request $request){
+        $buku_id = $request->buku_id;
+        $buku = Buku::all();
+        return view('user.form_pengembalian', compact('buku', 'buku_id'));
+    });
+
+    Route::post('submit_pengembalian', function(Request $request){
+        $pengembalian = Peminjaman::create($request->all());
+
+        if($pengembalian){
+            return redirect()->route("user.pengembalian");
+        }
+
+        return redirect()->back();
+    })->name('user.submit_pengembalian');
 
 
     Route::get('/peminjaman', function(){
